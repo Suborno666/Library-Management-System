@@ -1,0 +1,44 @@
+
+GET http://localhost:3000/users/me/2
+
+####
+GET http://localhost:3000/users
+
+
+
+####
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+    "first_name": "Robb",
+    "last_name": "Stark",
+    "username": "WiCssinceageofHeroes",
+    "email": "Goat@gmail.com",
+    "password": "Nomad Girl",
+    "age": 40
+}
+#######
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "Goat@gmail.com",
+    "password": "ASOIF"
+}
+
+###
+PUT http://localhost:3000/users/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlJvYmIiLCJsYXN0X25hbWUiOiJTdGFyayIsInVzZXJuYW1lIjoiV2lDc3NpbmNlYWdlb2ZIZXJvZXMiLCJhZ2UiOjQwLCJpYXQiOjE2OTU1Mzg5MDF9.y5ZIa0mAd_ToVi6ci-KeNDqb4kNWA9-FYbWCI27-yow
+
+{
+    "email": "Goat@gmail.com",
+    "age": 23,
+    "password": "Nomad Girl"
+}
+
+####
+DELETE http://localhost:3000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlJvYmIiLCJsYXN0X25hbWUiOiJTdGFyayIsInVzZXJuYW1lIjoiV2lDc3NpbmNlYWdlb2ZIZXJvZXMiLCJhZ2UiOjQwLCJpYXQiOjE2OTU1Mzg5MDF9.y5ZIa0mAd_ToVi6ci-KeNDqb4kNWA9-FYbWCI27-yow
+

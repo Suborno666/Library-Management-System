@@ -1,0 +1,8 @@
+const express = require('express');
+const router = express.Router();
+const bookcontroller = require("../controllers/bookControllers")
+
+
+router.get('/',bookcontroller.findAll)
+
+module.exports = router

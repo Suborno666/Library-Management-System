@@ -1,0 +1,9 @@
+get http://localhost:3000/author
+
+###
+post http://localhost:3000/author
+Content-Type: Application/json
+
+{
+    "name":"Haruki Murakami"
+}

@@ -1,0 +1,34 @@
+GET http://localhost:3000/admin
+
+###
+POST http://localhost:3000/admin
+Content-Type: application/json
+
+{
+    "username": "Suborno",
+    "password": "The North Remembers"
+}
+
+###
+POST http://localhost:3000/admin/login
+Content-Type: application/json
+
+{
+    "username": "Suborno Das",
+    "password": "The North Remembers"
+}
+###
+
+PUT http://localhost:3000/admin/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN1Ym9ybm8iLCJpYXQiOjE2OTU1NzExNTB9.LV9yCq0QD-wNn4uYRmpm37BiWIODiOQTjOwG_BUBaNw
+
+{
+    "username": "Suborno Das"
+}
+
+####
+
+DELETE http://localhost:3000/admin/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlJvYmIiLCJsYXN0X25hbWUiOiJTdGFyayIsInVzZXJuYW1lIjoiV2lDc3NpbmNlYWdlb2ZIZXJvZXMiLCJhZ2UiOjQwLCJpYXQiOjE2OTU1Mzg5MDF9.y5ZIa0mAd_ToVi6ci-KeNDqb4kNWA9-FYbWCI27-yow
+
