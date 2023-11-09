@@ -18,9 +18,6 @@ module.exports = {
         onUpdate: 'CASCADE', // Action to take when the referenced row is updated
         onDelete: 'CASCADE' // Action to take when the referenced row is deleted
       },
-      author:{
-        type: Sequelize.STRING
-      },
       name: {
         type: Sequelize.STRING
       },
