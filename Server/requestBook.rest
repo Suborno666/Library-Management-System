@@ -1,2 +1,13 @@
 GET http://localhost:3000/book
 
+####
+POST http://localhost:3000/book
+Content-Type: application/json
+
+{
+    "name": "A Dance with Dragons",
+    "stock": 2,
+    "authorName": "George R. R. Martin"
+}
+
+

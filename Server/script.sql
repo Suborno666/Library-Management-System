@@ -1,4 +1,2 @@
-drop database if exists Library_manager;
-
-
+drop database Library_manager;
 

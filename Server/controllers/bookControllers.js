@@ -3,7 +3,9 @@ const models = require('../models');
 exports.findAll = async (req,res)=>{
     try{
         const books = await models.Book.findAll()
-        res.status(200).json(books)
+        const author = await models.Author.findAll()
+        res.status(200).json({books:books,author:author})
+
     }
     catch (err){
         console.error(err);
@@ -11,31 +13,48 @@ exports.findAll = async (req,res)=>{
     }
 }
 
+// Inside the create function
 exports.create = async (req, res) => {
     try {
-        if (req.body.username != undefined || req.body.username != null) {
-            const possibleExistingUser = await models.User.findOne({
-                where: { username: req.body.username },
+        if (req.body.name != undefined && req.body.name != null) {
+            const possibleExistingBook = await models.Book.findOne({
+                where: { name: req.body.name },
             });
-            if (possibleExistingUser != null) {
-                return res.status(500).json({error:'the username is taken'});
+ 
+            if (possibleExistingBook != null) {
+                return res.status(409).json({ error: 'The book name is taken' });
+            } else {
+                let author;
+                if (req.body.authorName != undefined && req.body.authorName != null) {
+                   author = await models.Author.findOne({
+                       where: { authorName: req.body.authorName },
+                   });
+ 
+                   if (author == null) {
+                       author = await models.Author.create({
+                           authorName: req.body.authorName
+                       });
+                   }
+                } else {
+                   return res.status(400).json({ error: 'Author name is required' });
+                }
+ 
+                const create_book = await models.Book.create({
+                   name: req.body.name,
+                   stock: req.body.stock,
+                   authorId: author.id
+                });
+ 
+                res.status(201).json({
+                   message: "Created successfully",
+                   book: create_book,
+                   author: author.authorName
+                });
             }
         }
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        const create_user = await models.User.create({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            username: req.body.username,
-            email: req.body.email,
-            password: hashedPassword,
-            age: req.body.age,
-        });
-        res.status(201).json({
-            message:"Created sucessfully",
-            user: create_user
-        });
     } catch (error) {
-        console.error(error); // Log the error for debugging purposes
-        res.status(400).json({ error: "User creation failed",details:error.message }); // Send an error response with a meaningful message
+        console.error(error);
+        res.status(400).json({ error: "User creation failed", details: error.message });
     }
-};
+ };
+ 

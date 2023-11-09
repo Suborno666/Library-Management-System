@@ -19,7 +19,8 @@ module.exports = {
         onDelete: 'CASCADE' // Action to take when the referenced row is deleted
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       stock: {
         type: Sequelize.INTEGER
