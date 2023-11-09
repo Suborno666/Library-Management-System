@@ -16,6 +16,7 @@ exports.login = async(req,res,next) => {
             last_name: user.last_name,
             username: user.username,
             age: user.age,
+            role: user.role
           },
           process.env.SECRET
         );

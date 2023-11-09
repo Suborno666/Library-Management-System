@@ -41,12 +41,15 @@ exports.create = async (req, res) => {
 exports.update = async (req, res, next) => {
     try {
         const id = req.params.id;
-        const role = req.
+        const role = req.body.role;
         if (req.body.password) {
             const hashedPassword = await bcrypt.hash(req.body.password, 12);
             req.body.password = hashedPassword;
         }
-        const [updatedRowCount] = await models.User.update(req.body, { where: { id: id },{role: } });
+
+        const [updatedRowCount] = await models.User.update(req.body, {
+            where: { id: id, role: {[models.Sequelize.Op.or]: ['admin', 'Admin']} }
+        });
 
         if (updatedRowCount > 0) {
             res.status(200).send({ message: "Data updated successfully" });
@@ -61,6 +64,8 @@ exports.update = async (req, res, next) => {
         });
     }
 }
+
+
 
 exports.delete = async (req, res, next) => {
     try {

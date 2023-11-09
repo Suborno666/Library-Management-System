@@ -50,7 +50,7 @@ exports.create = async (req, res) => {
             username: req.body.username,
             email: req.body.email,
             password: hashedPassword,
-            age: req.body.age,
+            age: req.body.age
         });
         res.status(201).json({
             message:"Created sucessfully",

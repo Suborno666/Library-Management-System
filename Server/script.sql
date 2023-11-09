@@ -2,6 +2,8 @@
 
 use Library_manager;
 
-desc Users;
+select * from Library_manager.Users;
+
+/* delete from Library_manager.Users where id = 1; */
 
 
