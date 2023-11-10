@@ -12,7 +12,7 @@ function authenticateToken(roles) {
 
     jwt.verify(token, process.env.SECRET, (err, user) => {
       if (err) {
-        console.log('Token verification error:', err);
+        console.log('Token verification error:', err.message);
         return res.sendStatus(403);
       }
 

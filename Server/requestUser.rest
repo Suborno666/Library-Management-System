@@ -1,5 +1,5 @@
 
-GET http://localhost:3000/users/me/3
+GET http://localhost:3000/users/me/2
 
 ####
 GET http://localhost:3000/users
@@ -28,9 +28,9 @@ Content-Type: application/json
 }
 
 ####
-PUT http://localhost:3000/users/3
+PUT http://localhost:3000/users/2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTUyNjMyNH0.-VasWZqg3aFVs5bWi44qB6wCgtC9KrXzoPA8Ql2r7OQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTU5NDA1OX0.AfW60eJLSiJhjBOjN5_tpMAPupmfOZs1kL65dmrxcQ4
 
 {
     "email": "Goat@gmail.com",
@@ -39,6 +39,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ
 
 
 ####
-DELETE http://localhost:3000/users/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTUyNTk5MH0.jxP2wQEQGtHDQbaZTW9BClqlpsp5QEnFvuI0V_YbWdA
+DELETE http://localhost:3000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTU5NDA1OX0.AfW60eJLSiJhjBOjN5_tpMAPupmfOZs1kL65dmrxcQ4
 

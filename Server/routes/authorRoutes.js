@@ -4,6 +4,5 @@ const authorControllers = require('../controllers/authorControllers')
 
 router.get('/',authorControllers.findAll)
 
-router.post('/',authorControllers.create)
 
 module.exports = router
