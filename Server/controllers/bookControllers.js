@@ -1,5 +1,11 @@
 const models = require('../models');
 
+function capitalise(word) {
+    return word.split(/\s+/)
+               .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+               .join(' ');
+  } 
+
 exports.findAll = async (req,res)=>{
     try{
         const books = await models.Book.findAll()
@@ -31,16 +37,18 @@ exports.create = async (req, res) => {
                    });
  
                    if (author == null) {
+                       const capitalizedAuthor = capitalise(req.body.authorNam)
                        author = await models.Author.create({
-                           authorName: req.body.authorName
+                           authorName: capitalizedAuthor
                        });
                    }
                 } else {
                    return res.status(400).json({ error: 'Author name is required' });
                 }
- 
+
+                const capitalizedBook = capitalise(req.body.name)
                 const create_book = await models.Book.create({
-                   name: req.body.name,
+                   name: capitalizedBook,
                    stock: req.body.stock,
                    authorId: author.id
                 });
