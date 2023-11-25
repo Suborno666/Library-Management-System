@@ -8,7 +8,7 @@ module.exports = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DEVELOPMENT_NAME,
-    host: process.env.DB_HOST || '127.0.0.1',
+    host: process.env.DB_HOST,
     port: 3306,
     dialect: 'mysql',
     dialectOptions: {
