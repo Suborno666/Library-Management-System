@@ -19,7 +19,7 @@ module.exports = {
     username: process.env.CI_DB_USERNAME,
     password: process.env.CI_DB_PASSWORD,
     database: process.env.CI_DB_NAME,
-    host: process.env.CI_DB_HOST || '127.0.0.1',
+    host: process.env.CI_DB_HOST,
     port: 3306,
     dialect: 'mysql',
     dialectOptions: {
