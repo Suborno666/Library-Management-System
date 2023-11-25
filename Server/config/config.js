@@ -9,7 +9,7 @@ const config = {
   password: process.env.DB_PASSWORD,
 };
 
-// console.log(config);
+console.log(config);
 
 module.exports = {
   url: process.env.DB_CONNECTION_URL,
