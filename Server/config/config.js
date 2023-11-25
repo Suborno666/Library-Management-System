@@ -15,4 +15,4 @@ module.exports = {
   test: { ...config, database: process.env.DB_TEST_NAME },
   production: { ...config, database: process.env.DB_PROD_NAME },
 };
-console.log(config);
+console.log(config,DB_DEVELOPMENT_NAME);
