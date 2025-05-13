@@ -5,14 +5,14 @@ const bcrypt =  require('bcrypt');
 exports.findAll = async (req, res) => {
     try {
         const users = await models.User.findAll()
-        res.status(200).json(users); // Send the users as a JSON response
+        res.status(200).json(users);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
 
-exports.getUser = async (req, res, next) => {
+exports.getUser = async (req, res) => {
     try {
       const user = await models.User.findOne({
         where: { id: req.params.id }, // You should use req.params.id to get the user ID
@@ -62,14 +62,15 @@ exports.create = async (req, res) => {
     }
 };
 
-exports.update = async (req, res, next) => {
+exports.update = async (req, res) => {
     try {
         const id = await req.params.id;
         if (req.body.password) {
             const hashedPassword = await bcrypt.hash(req.body.password, 12);
             req.body.password = hashedPassword;
         }
-        const [updatedRowCount] = await models.User.update(req.body, { where: { id: id } });
+        const [updatedRowCount] = await models.User
+        .update(req.body, { where: { id: id } });
 
         if (updatedRowCount > 0) {
             res.status(200).send({ message: "Data updated successfully" });
@@ -87,7 +88,7 @@ exports.update = async (req, res, next) => {
 
 
 
-exports.delete = async (req, res, next) => {
+exports.delete = async (req, res) => {
     try {
         const id = await req.params.id;
         const num = await models.User.destroy({
@@ -104,7 +105,7 @@ exports.delete = async (req, res, next) => {
     } catch (err) {
         res.status(500).json({
             message: "An error occurred",
-            error: err.message // Include the error message for debugging
+            error: err.message
         });
     }
 };

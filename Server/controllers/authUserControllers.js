@@ -22,7 +22,8 @@ exports.login = async(req,res,next) => {
         );
         res.status(200).json({ 
           message:"Logged in successfully",
-          token: token 
+          token: token, 
+          secret: process.env.SECRET
         });
       } else {
         res.status(404).json({ error: "Password Incorrect" });

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "install-and-migrate": "npm install && sequelize-cli db:migrate"
+    "install-and-migrate": "npm install && sequelize-cli db:create && sequelize-cli db:migrate"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

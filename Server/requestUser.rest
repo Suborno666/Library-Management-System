@@ -28,17 +28,17 @@ Content-Type: application/json
 }
 
 ####
-PUT http://localhost:3000/users/2
+PUT http://localhost:3000/users/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTU5NDA1OX0.AfW60eJLSiJhjBOjN5_tpMAPupmfOZs1kL65dmrxcQ4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzEyMTU3M30.2mU4VrMriRiuVIsJfhnlP87BwpvlT3K75b_OyEsJYMg
 
 {
-    "email": "Goat@gmail.com",
+    "email": "goat@gmail.com",
     "age": 23
 }
 
 
 ####
 DELETE http://localhost:3000/users/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTU5NDA1OX0.AfW60eJLSiJhjBOjN5_tpMAPupmfOZs1kL65dmrxcQ4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkdvYXRAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IlN1Ym9ybm8iLCJsYXN0X25hbWUiOiJEYXMiLCJ1c2VybmFtZSI6InN1Ym9ybm9kYXMiLCJhZ2UiOjQwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzEyMTU3M30.2mU4VrMriRiuVIsJfhnlP87BwpvlT3K75b_OyEsJYMg
 
