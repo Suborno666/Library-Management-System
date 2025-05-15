@@ -1,12 +1,29 @@
 import { useState } from 'react'
 import './styles.css'
 export default function App(){
-  const[newItem, setNewItem] = useState()
+
+  const[newItem, setNewItem] = useState("")
+  const[Todos, setTodos] = useState([])
+
+  function handleSubmit(e){
+    e.preventDefault();
+ 
+    setTodos((currentTodos)=>
+    {
+      return [ ...currentTodos,{
+      id:crypto.randomUUID(),
+      title:newItem,
+      completed:false
+    }] 
+    })
+  }
+
+  console.log(Todos)
 return <>
-  <form className='new-item-form'>
+  <form onSubmit={handleSubmit} className='new-item-form'>
     <div className='form-row'>
       <label htmlFor='item'>New Item</label>
-      <input type="text" id='item' />
+      <input value={newItem} onChange={e=>setNewItem(e.target.value)} type="text" id='item' />
     </div>
     <button className='btn'>Add</button>
   </form>
@@ -18,12 +35,12 @@ return <>
       </label>
       <button className='btn btn-danger'>Remove</button>
     </li>
-    <li>
+    {/* <li>
       <label>
         <input type="checkbox" /> Item 2
       </label>
       <button className='btn btn-danger'>Remove</button>
-    </li>
+    </li> */}
   </ul>
 </>
 }
